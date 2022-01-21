@@ -68,7 +68,7 @@ void init(particle_t *p, u64 n)
     
 }
 
-static inline float InvSqrt(float x)
+/*static inline float InvSqrt(float x)
 {
 float xhalf = 0.5f*x;
 int i = *(int*)&x; // get bits for floating value
@@ -76,7 +76,7 @@ i = 0x5f3759df - (i>>1); // gives initial guess y0
 x = *(float*)&i; // convert bits back to float
 x = x*(1.5f-xhalf*x*x); // Newton step, repeating increases accuracy
 return x;
-}
+}*/
 
 void move_particles(particle_t *p, const f32 dt, u64 n)
 {
@@ -106,13 +106,13 @@ void move_particles(particle_t *p, const f32 dt, u64 n)
         const f32 dz = p->z[j] - pzi; //3
       
         const f32 d_2 = (dx * dx) + (dy * dy) + (dz * dz) + softening; //9
-        const f32 d_sq = InvSqrt(d_2); //11
-        const f32 d_3_over_2 = d_sq * d_sq * d_sq; //13
+        const f32 t= sqrt(d_2);
+	  const f32 d_3_over_2= t*t*t;
 
 	  //Net force
-	    fx += dx * d_3_over_2; //15
-	    fy += dy * d_3_over_2; //17
-	    fz += dz * d_3_over_2; //19
+	  fx += dx / d_3_over_2; //13
+	  fy += dy / d_3_over_2; //15
+	  fz += dz / d_3_over_2; //17
 	}
 
       //
