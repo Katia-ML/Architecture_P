@@ -1,0 +1,41 @@
+
+* Info: Process launched (host katia-VivoBook-ASUSLaptop-X415JAB-X415JA, process 4476)
+[1mTotal memory size:[0m 393216 B, 384 KiB, 0 MiB
+
+[1m Step    Time, s Interact/s  GFLOP/s[0m
+    0  7.898e-01  3.399e+08      7.8 *
+    1  7.949e-01  3.377e+08      7.8 *
+    2  7.672e-01  3.499e+08      8.0 *
+    3  7.673e-01  3.498e+08      8.0 
+    4  7.996e-01  3.357e+08      7.7 
+    5  7.994e-01  3.358e+08      7.7 
+    6  7.669e-01  3.500e+08      8.0 
+    7  7.599e-01  3.532e+08      8.1 
+    8  7.451e-01  3.602e+08      8.3 
+    9  7.360e-01  3.647e+08      8.4 
+-----------------------------------------------------
+[1mAverage performance:      [42m       8.0 +- 0.2 GFLOP/s[0m
+-----------------------------------------------------
+
+* Info: Process finished (host katia-VivoBook-ASUSLaptop-X415JAB-X415JA, process 4476)
+* Info: Dumping samples (host katia-VivoBook-ASUSLaptop-X415JAB-X415JA, process 4476)
+* Info: Dumping source info for callchain nodes (host katia-VivoBook-ASUSLaptop-X415JAB-X415JA, process 4476)
+* Info: Building/writing metadata (host katia-VivoBook-ASUSLaptop-X415JAB-X415JA)
+* Info: Finished collect step (host katia-VivoBook-ASUSLaptop-X415JAB-X415JA, process 4476)
+
+Your experiment path is /home/katia/Archi/maqao_2022-01-21_14-09-29/tools/lprof_npsu_run_0
+
+To display your profiling results:
+#################################################################################################
+#    LEVEL    |     REPORT     |                            COMMAND                             #
+#################################################################################################
+#  Functions  |  Cluster-wide  |  maqao lprof -df xp=/home/katia/Archi/maqao_2022-01-21_14-09-  #
+#  Functions  |  Per-node      |  maqao lprof -df -dn xp=/home/katia/Archi/maqao_2022-01-21_14  #
+#  Functions  |  Per-process   |  maqao lprof -df -dp xp=/home/katia/Archi/maqao_2022-01-21_14  #
+#  Functions  |  Per-thread    |  maqao lprof -df -dt xp=/home/katia/Archi/maqao_2022-01-21_14  #
+#  Loops      |  Cluster-wide  |  maqao lprof -dl xp=/home/katia/Archi/maqao_2022-01-21_14-09-  #
+#  Loops      |  Per-node      |  maqao lprof -dl -dn xp=/home/katia/Archi/maqao_2022-01-21_14  #
+#  Loops      |  Per-process   |  maqao lprof -dl -dp xp=/home/katia/Archi/maqao_2022-01-21_14  #
+#  Loops      |  Per-thread    |  maqao lprof -dl -dt xp=/home/katia/Archi/maqao_2022-01-21_14  #
+#################################################################################################
+

@@ -1,0 +1,18 @@
+/home/katia/Archi/nbodySoA.c: 68 - 82
+--------------------------------------------------------------------------------
+
+68:       for (u64 j = 0; j < n; j++)
+69: 	{
+70: 	  //Newton's law
+71: 	  const f32 dx = p->x[j] - p->x[i]; //1
+72: 	  const f32 dy = p->y[j]- p->y[i]; //2
+73: 	  const f32 dz = p->z[j] - p->z[i]; //3
+74: 	  const f32 d_2 = (dx * dx) + (dy * dy) + (dz * dz) + softening; //9
+75: 	  const f32 d_3_over_2 = pow(d_2, 3.0 / 2.0);//11
+76: 	  //const f32 t= sqrt(d_2);
+77: 	  //const f32 d_3_over_2= t*t*t;
+78: 
+79: 	  //Net force
+80: 	  fx += dx / d_3_over_2; //13
+81: 	  fy += dy / d_3_over_2; //15
+82: 	  fz += dz / d_3_over_2; //17

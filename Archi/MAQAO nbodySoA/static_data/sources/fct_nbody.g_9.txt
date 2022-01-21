@@ -1,0 +1,47 @@
+/home/katia/Archi/nbodySoA.c: 55 - 98
+--------------------------------------------------------------------------------
+
+55: {
+56:   //
+57:   const f32 softening = 1e-20;
+58: 
+59:   //
+60:   for (u64 i = 0; i < n; i++)
+61:     {
+62:       //
+63:       f32 fx = 0.0;
+64:       f32 fy = 0.0;
+65:       f32 fz = 0.0;
+66: 
+67:       //23 floating-point operations
+68:       for (u64 j = 0; j < n; j++)
+69: 	{
+70: 	  //Newton's law
+71: 	  const f32 dx = p->x[j] - p->x[i]; //1
+72: 	  const f32 dy = p->y[j]- p->y[i]; //2
+73: 	  const f32 dz = p->z[j] - p->z[i]; //3
+74: 	  const f32 d_2 = (dx * dx) + (dy * dy) + (dz * dz) + softening; //9
+75: 	  const f32 d_3_over_2 = pow(d_2, 3.0 / 2.0);//11
+76: 	  //const f32 t= sqrt(d_2);
+77: 	  //const f32 d_3_over_2= t*t*t;
+78: 
+79: 	  //Net force
+80: 	  fx += dx / d_3_over_2; //13
+81: 	  fy += dy / d_3_over_2; //15
+82: 	  fz += dz / d_3_over_2; //17
+83: 	}
+84: 
+85:       //
+86:       p->vx[i] += dt * fx; //19
+87:       p->vy[i] += dt * fy; //21
+88:       p->vz[i] += dt * fz; //23
+89:     }
+90: 
+91:   //3 floating-point operations
+92:   for (u64 i = 0; i < n; i++)
+93:     {
+94:       p->x[i] += dt * p->vx[i];
+95:       p->y[i] += dt * p->vy[i];
+96:       p->z[i] += dt * p->vz[i];
+97:     }
+98: }

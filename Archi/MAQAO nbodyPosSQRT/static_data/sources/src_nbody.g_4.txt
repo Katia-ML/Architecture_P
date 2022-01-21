@@ -1,0 +1,23 @@
+/home/katia/Archi/nbodyPosSQRT.c: 75 - 115
+--------------------------------------------------------------------------------
+
+75: i = 0x5f3759df - (i>>1); // gives initial guess y0
+76: x = *(float*)&i; // convert bits back to float
+77: x = x*(1.5f-xhalf*x*x); // Newton step, repeating increases accuracy
+[...]
+100:       for (u64 j = 0; j < n; j++)
+101: 	{
+102: 	  //Newton's law
+103:       
+104:         const f32 dx = p->x[j] - pxi; //1
+105:         const f32 dy = p->y[j] - pyi; //2
+106:         const f32 dz = p->z[j] - pzi; //3
+107:       
+108:         const f32 d_2 = (dx * dx) + (dy * dy) + (dz * dz) + softening; //9
+109:         const f32 d_sq = InvSqrt(d_2); //11
+110:         const f32 d_3_over_2 = d_sq * d_sq * d_sq; //13
+111: 
+112: 	  //Net force
+113: 	    fx += dx * d_3_over_2; //15
+114: 	    fy += dy * d_3_over_2; //17
+115: 	    fz += dz * d_3_over_2; //19

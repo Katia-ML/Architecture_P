@@ -1,0 +1,5 @@
+Node;Process;Thread;System (%);Binary (%);MPI (%);Nb Cycle Events;OMP (%);Others (%);String (%);Memory (%);IO (%);Time (s);Math (%);Pthread (%);
+_ALL;_ALL;_ALL;0;100;0;1516;0;0;0;0;0;7.73;0;0;
+katia-VivoBook-ASUSLaptop-X415JAB-X415JA;_ALL;_ALL;0;100;0;1516;0;0;0;0;0;7.73;0;0;
+katia-VivoBook-ASUSLaptop-X415JAB-X415JA;4476;_ALL;0;100;0;1516;0;0;0;0;0;7.73;0;0;
+katia-VivoBook-ASUSLaptop-X415JAB-X415JA;4476;4476;0;100;0;1516;0;0;0;0;0;7.73;0;0;
