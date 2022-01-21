@@ -6,7 +6,7 @@ nbody.g1: nbody.c
 nbody.g: nbodyPosSQRT.c
 	gcc -g -march=native -mavx2 -Ofast -funroll-loops -finline-functions -ftree-vectorize -fno-omit-frame-pointer -fopt-info-all=nbody.gcc.optrpt $< -o $@ -lm -fopenmp
 
-nbody.i: nbody.c
+nbody.i: nbodyPosSQRT.c
 	icc -xhost -Ofast -qopt-report $< -o $@ -qmkl -qopenmp
 		
 clean:
